@@ -1,0 +1,571 @@
+/* css reset */
+
+* {
+  padding: 0px;
+  margin: 0px;
+  box-sizing: border-box;
+  /* font-family: Arial, Helvetica, sans-serif; */
+  /* font-family: century gothic; */
+  font-family: "IBM Plex Sans", sans-serif;
+  --font-primary: white;
+  --font-hover: #b6fbff;
+}
+
+html {
+  font-size: 16px;
+}
+/* Newsletter */
+#newsLetterCover {
+  display: none;
+  width: 100%;
+  height: 100vh;
+  background: #d7d7d785 no-repeat center center/cover;
+  position: fixed;
+  top: 0;
+  z-index: 6;
+}
+#newsLetter {
+  background-color: whitesmoke;
+  border: 2px solid whitesmoke;
+  height: 198px;
+  width: 500px;
+  margin: 231px auto;
+  box-shadow: 0px 0px 19px 3px black;
+}
+#closeNewsLetter {
+  float: right;
+  padding-top: 5px;
+  padding-right: 8px;
+  font-size: 1.5rem;
+}
+#closeNewsLetter:hover {
+  color: var(--font-hover);
+  cursor: pointer;
+}
+#newsLetter p {
+  text-align: center;
+  margin: 30px 23px;
+  margin-bottom: 10px;
+  font-size: 1.5rem;
+}
+#newsLetterEmail {
+  display: block;
+  margin: auto;
+  padding: 5px 10px;
+  width: 270px;
+  font-size: 1rem;
+  text-align: center;
+}
+#newsLetterSubmit {
+  display: block;
+  margin: 12px auto;
+  padding: 4px 10px;
+  font-size: 1rem;
+}
+/* banner */
+#banner {
+  background-color: black;
+  color: white;
+  position: sticky;
+  top: 0;
+  z-index: 5;
+}
+#banner a {
+  color: white;
+}
+#banner a p {
+  display: inline-block;
+  min-width: 97%;
+  text-align: center;
+}
+#banner #closeIconBanner {
+  display: inline;
+  font-size: 1.5rem;
+}
+#banner #closeIconBanner:hover {
+  color: var(--font-hover);
+}
+
+/* header */
+
+#header {
+  display: flex;
+  background: linear-gradient(69deg, #b6fbff 0% 43%, black 44%, #83a4d4);
+  justify-content: space-between;
+  align-items: center;
+  position: sticky;
+  top: 32px;
+  height: 82px;
+  box-shadow: 0px 0px 19px 3px black;
+  z-index: 4;
+}
+/* header-logo */
+#logo {
+  margin: 0px 12px;
+}
+#logo a {
+  font-family: "Permanent Marker", cursive;
+  font-size: 2.5rem;
+  text-decoration: none;
+  color: black;
+}
+#logo a abbr {
+  font-family: "Permanent Marker", cursive;
+  text-decoration: none;
+}
+/* header-navbar */
+#navbar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  list-style: none;
+}
+#navbar li .navbarItems {
+  margin: 0px 36px;
+  font-size: 1.3rem;
+  padding-bottom: 23px;
+  color: white;
+  transition: all 0.1s ease;
+}
+#navbar li:nth-child(1) .navbarItems {
+  color: black;
+}
+#navbar li .navbarItems:hover {
+  color: var(--font-hover);
+  text-shadow: 0 0 80px #b6fbff;
+  cursor: pointer;
+  border-bottom: 5px solid #b6fbff;
+}
+/* header-navbar-products */
+.fa-caret-square-right {
+  margin: 2px 4px;
+  margin-bottom: 0px;
+  font-size: 1rem;
+}
+
+/* header-navbar-products-subProducts */
+
+#subProduct {
+  background-color: #83a4d4;
+  position: absolute;
+  display: none;
+  margin-top: 27px;
+  /* box-shadow:0px 0px 12px 3px black; */
+  border: 2px solid black;
+  padding: 10px 10px;
+}
+.subProductMenu {
+  list-style: none;
+}
+.subProductMenu h3 {
+  text-align: center;
+  font-size: 2rem;
+}
+.subProductMenu li {
+  margin: 10px 0px;
+}
+.subProductMenu li a {
+  border-bottom: 1px solid black;
+  padding: 0px 58px;
+  padding-left: 0px;
+  margin: 0px 26px;
+}
+.subProductMenu li a:hover {
+  color: var(--font-hover);
+  cursor: pointer;
+}
+
+/* header-navicons */
+#navIconBox {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#navIconBox a {
+  font-size: 2rem;
+  margin: 0px 12px;
+  color: var(--font-primary);
+}
+#navIconBox a:hover {
+  color: var(--font-hover);
+}
+/* Burger-menu */
+.burgerMenu {
+  display: none;
+  justify-content: center;
+  align-items: center;
+  width: 2rem;
+  height: 2rem;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  margin: 12px;
+  position: relative;
+}
+.burgerMenuComponent {
+  width: 2rem;
+  height: 6px;
+  background-color: white;
+  border-radius: 5px;
+  transition: all 0.3s ease-in-out;
+}
+.burgerMenuComponent::before,
+.burgerMenuComponent::after {
+  content: "";
+  position: absolute;
+  width: 2rem;
+  height: 6px;
+  background-color: white;
+  border-radius: 5px;
+  transition: all 0.3s ease-in-out;
+}
+.burgerMenuComponent::before {
+  transform: translateY(-0.8rem);
+}
+.burgerMenuComponent::after {
+  transform: translateY(0.8rem);
+}
+/* burger menu animations */
+.open .burgerMenuComponent {
+  background-color: transparent;
+}
+.open .burgerMenuComponent:before {
+  transform: rotate(45deg);
+  background-color: var(--font-hover);
+}
+.open .burgerMenuComponent:after {
+  transform: rotate(-45deg);
+  background-color: var(--font-hover);
+}
+
+/* MainContent--------- */
+.container {
+  margin: 53px 0px;
+}
+#halo {
+  /* border: 2px solid green; */
+  width: 60%;
+  height: 500px;
+  transform: skewX(20deg);
+  transform-origin: bottom;
+  justify-content: space-between;
+  align-items: center;
+  position: absolute;
+  display: flex;
+  flex-wrap: wrap;
+  overflow: hidden;
+  z-index: 2;
+}
+.haloChild {
+  border: 2px solid transparent;
+  width: 50px;
+  height: 50px;
+  transform-origin: bottom;
+  transition: all 0.5s ease-out;
+}
+.haloChildMain {
+  box-shadow: 0px 0px 12px 3px black;
+  /* box-shadow: 0 0 20px #fff, 0 0 30px #b6fbff, 0 0 40px #b6fbff, 0 0 50px #b6fbff, 0 0 60px #b6fbff, 0 0 70px #b6fbff, 0 0 80px #b6fbff; */
+  /* transform: scale(0.5); */
+  /* border-radius: 50%; */
+}
+.haloChildNeighbour {
+  box-shadow: 0px 0px 12px 3px #b6fbff;
+  transform: scale(0.8);
+}
+#newReleases::before {
+  content: "";
+  background-color: #83a4d4;
+  height: 500px;
+  width: 60%;
+  position: absolute;
+  transform-origin: bottom;
+  transform: skewX(20deg);
+  z-index: -2;
+  box-shadow: 0px 0px 12px 3px black;
+}
+#newReleases {
+  height: 500px;
+  position: relative;
+}
+.newReleasesInfo {
+  margin: 20px 50px;
+  padding-top: 123px;
+  width: 40%;
+  height: 400px;
+  font-size: 1.5rem;
+  position: absolute;
+  /* background-color: #f64040; */
+  z-index: 1;
+}
+.newReleasesInfo h2 {
+  font-family: "Permanent Marker", cursive;
+  font-size: 2rem;
+  margin-left: 12px;
+  animation: inn 0.5s ease-out;
+}
+
+/* PlayHere-------------- */
+#controlSurface {
+  background: url(../images/newReleases/controlSurface.jpg) no-repeat 0px -20px /
+    cover;
+  height: 500px;
+  z-index: -5;
+  position: absolute;
+  width: 100%;
+  display: block;
+}
+#synth {
+  background: url(../images/newReleases/synth.jpg) no-repeat 0px -20px / cover;
+  height: 500px;
+  position: absolute;
+  z-index: -5;
+  width: 100%;
+  display: none;
+}
+#pitchCorrection {
+  background: url(../images/newReleases/mautopitch.jpg) no-repeat 0px -20px / cover;
+  height: 500px;
+  position: absolute;
+  z-index: -5;
+  width: 100%;
+  display: none;
+}
+
+#controlInfo {
+  display: block;
+}
+#synthInfo {
+  display: none;
+}
+#pitchInfo {
+  display: none;
+}
+
+.controlImg {
+  z-index: 3;
+  position: absolute;
+  width: 37px;
+  top: 250px;
+}
+
+.controlImg:hover {
+  cursor: pointer;
+}
+
+#leftButton {
+  transform: rotate(90deg);
+  float: left;
+}
+#rightButton {
+  transform: rotate(-90deg);
+  float: right;
+  right: 5px;
+}
+
+/* Artists */
+#artists {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  align-items: center;
+  /* box-shadow:0px 0px 12px 3px black; */
+}
+#artistsContent {
+  width: 100%;
+  min-height: 480px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+#artistsTestimony {
+  /* border: 2px solid black; */
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  perspective: 1000px;
+}
+
+.mainArtistsTestimony {
+  background-color: rgb(254, 255, 215);
+  box-shadow: 0px 0px 12px 3px black;
+  display: none;
+  width: 60%;
+  height: 400px;
+  margin: 20px 0px;
+}
+.artistsTestimonyCenter {
+  order: 2;
+  display: block;
+  z-index: 1;
+  position: absolute;
+  animation: slideInLeftCenter 1s ease;
+}
+.artistsTestimonyRight {
+  z-index: 0;
+  order: 3;
+  display: block;
+  position: absolute;
+  transform: scale(0.75) rotateY(30deg);
+  right: -250px;
+  animation: slideInLeftLeft 1s ease;
+}
+.artistsTestimonyLeft {
+  z-index: 0;
+  order: 1;
+  display: block;
+  position: absolute;
+  transform: scale(0.75) rotateY(-30deg);
+  left: -250px;
+  animation: slideInLeftRight 1s ease;
+}
+.testimonySelector {
+  border: 5px solid #83a4d4;
+  background-color: white;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  margin: 0px 5px;
+}
+.testimonyButton {
+  width: 37px;
+  height: 37px;
+  transform: rotate(90deg);
+  z-index: 2;
+}
+#rightTestimonyButton {
+  transform: rotate(270deg);
+}
+#radioSlider {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: row-reverse;
+}
+/* AboutUs */
+#aboutUs {
+  background-color: grey;
+}
+
+/* SideBar */
+.everything {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+#mainContent {
+  width: 100%;
+}
+.everything #sideNavbar {
+  display: none;
+  flex-direction: column;
+  min-width: 208px;
+  list-style: none;
+  background-color: #b6fbff;
+  margin-left: 12px;
+  margin-right: 12px;
+  margin-top: 53px;
+  position: sticky;
+  top: 167px;
+  flex-wrap: nowrap;
+}
+.topNavbar {
+  margin-right: 12px;
+}
+/* side navbar items */
+#sideNavbar li {
+  border-bottom: 1px solid black;
+  padding: 5px;
+  padding-left: 20px;
+}
+#sideNavbar li a {
+  cursor: pointer;
+}
+#sideSubProduct {
+  display: none;
+}
+#sideSubProduct ul {
+  list-style: none;
+  background-color: #83a4d4;
+  box-shadow: inset 0px 1px 4px black, inset 0px -1px 4px black;
+}
+#sideSubProduct ul h3 {
+  text-align: center;
+}
+
+@media (min-width: 1269px) {
+  #sideNavbar {
+    display: none;
+  }
+  #sidebar {
+    display: none;
+  }
+}
+@media (max-width: 1268px) {
+  #navbar {
+    display: none;
+  }
+  #newReleases::before {
+    display: none;
+  }
+  #halo {
+    display: none;
+  }
+  .burgerMenu {
+    display: flex;
+  }
+  .newReleasesInfo {
+    color: white;
+    overflow: auto;
+  }
+  .newReleasesInfo h2 {
+    animation: none;
+  }
+  .mainArtistsTestimony {
+    width: 100%;
+  }
+  .artistsTestimonyRight {
+    display: none;
+  }
+  .artistsTestimonyLeft {
+    display: none;
+  }
+}
+@media (max-width: 466px) {
+  #header {
+    min-height: 100px;
+    top: 52px;
+  }
+}
+@keyframes inn {
+  from {
+    margin-left: -500px;
+  }
+  to {
+    margin-left: 12px;
+  }
+}
+@keyframes slideInLeftCenter {
+  from {
+    transform: scale(0.75);
+  }
+  to {
+    transform: scale(1);
+  }
+}
+@keyframes slideInLeftLeft {
+  from {
+    transform: scale(0.5) rotateY(20deg);
+  }
+  to {
+    transform: scale(0.75) rotateY(30deg);
+  }
+}
+@keyframes slideInLeftRight {
+  from {
+    transform: scale(0.5) rotateY(-20deg);
+  }
+  to {
+    transform: scale(0.75) rotateY(-30deg);
+  }
+}
